@@ -40,7 +40,7 @@ limit_time = 0
 def jobChatGpt():
     db_con = db.DBSqlite("chat.db")  
     global limit_time
-    chat_robot = question.Chat("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")
+    chat_robot = question.Chat("you open ai api key")
     sql = 'SELECT word, limit_time FROM keywords WHERE limit_time > %d;'%(limit_time)
     keywords_row = db_con.getData(sql)
     sql_prefix = '''INSERT INTO gpt_answer (question, answer, limit_time, checkout) VALUES '''
